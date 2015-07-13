@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+
+ body {
+   background-color:yellow;
+ }
+
+  p {
+    background-color:red;
+
+
+  }
+
+
+           #third {
+           font-weight: normal;
+             background-color:green;
+           }
+
+ p.styleSample {
+ font-weight: bold;
+ text-decoration:line-through;
+ text-transform:uppercase;
+ }
+
+ a.email {
+ background: url(http://www.newthinktank.com/images/email-icon.gif) no-repeat right top;
+ padding-right: 20px;
+ }
+
+ .tableAlt {
+ background-color: #F5F5DC;
+ }
+
+ .tableTitle {
+ background-color: #3D2B1F;
+ color: #FFF;
+ font-weight: bold;
+ }
