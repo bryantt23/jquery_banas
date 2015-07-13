@@ -1,60 +1,55 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
 
 
- body {
-   background-color:yellow;
- }
+body {
+  background-color:yellow;
+}
 
-  p {
-    background-color:red;
-
-
-  }
+p {
+  background-color:red;
 
 
-           #third {
-           font-weight: normal;
-             background-color:green;
-           }
+}
 
- p.styleSample {
- font-weight: bold;
- text-decoration:line-through;
- text-transform:uppercase;
- }
+#third {
+  font-weight: normal;
+  background-color:green;
+}
 
- a.email {
- background: url(http://www.newthinktank.com/images/email-icon.gif) no-repeat right top;
- padding-right: 20px;
- }
-
- .tableAlt {
- background-color: #F5F5DC;
- }
-
- .tableTitle {
- background-color: #3D2B1F;
- /*color: #FFF;*/
- color: red;
- font-weight: bold;
- }
+p.styleSample {
+  font-weight: bold;
+  text-decoration:line-through;
+  text-transform:uppercase;
+}
 
 
- a.email {
-   background: url(http://www.newthinktank.com/images/email-icon.gif) no-repeat right top;
-   padding-right: 20px;
- }
+.tableAlt {
+  background-color: #F5F5DC;
+}
+
+.tableTitle {
+  background-color: #3D2B1F;
+  /*color: #FFF;*/
+  color: red;
+  font-weight: bold;
+}
+
+
+a.email {
+  background-image: image-url("email-icon.gif")
+  padding-right: 20px;
+}
