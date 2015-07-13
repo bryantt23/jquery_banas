@@ -9,7 +9,7 @@ Here I open up my html page and then link to the JQuery library.
 
 
 
-<!-- Here I create a whole bunch of CSS Style definition’s that I’ll use below. If you don’t understand this, see my CSS Style Tutorial. -->
+<!-- Here I create a whole bunch of CSS Style definition's that I'll use below. If you don't understand this, see my CSS Style Tutorial. -->
 
 <head>
 
@@ -57,15 +57,14 @@ Here I open up my html page and then link to the JQuery library.
   </div>
 
   <form>
-    <button type="button" id="oneButton">Add Email Icon</button>
-    <button type="button" id="twoButton">Make Table Pretty</button>
-    <button type="button" id="threeButton">Fix Table Title</button>
-    <button type="button" id="fourButton">Mess up 4th P</button>
-    <button type="button" id="fiveButton">Mess All P in Divs</button>
-    <button type="button" id="sixButton">Highlight Fourth</button>
-    <button type="button" id="sevenButton">Find p with Attribute</button>
-    <button type="button" id="eightButton">Find p Named third</button>
-
+    <button type="button" id="oneButton" onclick="myFunction1()">Add Email Icon</button>
+    <button type="button" id="twoButton" onclick="myFunction2()">Make Table Pretty</button>
+    <button type="button" id="threeButton" onclick="myFunction3()">Fix Table Title</button>
+    <button type="button" id="fourButton" onclick="myFunction4()">Mess up 4th P</button>
+    <button type="button" id="fiveButton" onclick="myFunction5()">Mess All P in Divs</button>
+    <button type="button" id="sixButton" onclick="myFunction6()">Highlight Fourth</button>
+    <button type="button" id="sevenButton" onclick="myFunction7()">Find p with Attribute</button>
+    <button type="button" id="eightButton" onclick="myFunction8()">Find p Named third</button>
   </form>
 
 
@@ -73,26 +72,51 @@ Here I open up my html page and then link to the JQuery library.
 
   <button onclick="myFunction()">Try it</button>
 
-  <button type="button" id="sixButton" onclick="myFunction6()">Highlight Fourth</button>
-  <button type="button" id="twoButton" onclick="myFunction2()">Make Table Pretty</button>
 
   <script>
 
   function myFunction() {
     alert("I am an alert box!");
   }
-
-  function myFunction6() {
-    $('p[align]').css("font-style", "italic");
+  // not working
+  function myFunction1() {
+    $('a[href^=mailto:]').addClass('email');
   }
+
 
   function myFunction2() {
     $('tr:nth-child(even)').addClass('tableAlt');
   }
 
+  function myFunction3() {
+    $('tr:nth-child(1)').addClass('tableTitle');
+  }
+    function myFunction4() {
+      $('p').eq(3).toggleClass("styleSample");
+    }
+      function myFunction5() {
+        $("div > p").toggleClass("styleSample");
+      }
+
+
+  function myFunction6() {
+    $('p[align]').css("font-style", "italic");
+  }
+    function myFunction7() {
+      $('p[align]').css("font-style", "italic");
+    }
+
+
+function myFunction8() {
+  if($('#third').is('p')){
+    alert("I found the paragraph named third");
+  }
+}
+
+
 
   // window.onload = function() {
-  // document.getElementById(‘sixButton’).onclick = highlightFourth;
+  // document.getElementById('sixButton').onclick = highlightFourth;
   // };
 
   //     // Here we look for the text "Fourth" inside of every paragraph element. If we find that word, I change the attribute of that element so that the text color equals "yellow".
@@ -106,18 +130,18 @@ Here I open up my html page and then link to the JQuery library.
 
   </script>
 
-  window.onload = function() {
-    document.getElementById(‘oneButton’).onclick = addEmailIcon;
-    document.getElementById(‘twoButton’).onclick = makeTablePretty;
-    document.getElementById(‘threeButton’).onclick = fixTableTitle;
-    document.getElementById(‘fourButton’).onclick = messUpP;
-    document.getElementById(‘fiveButton’).onclick = messAllPInDiv;
-    document.getElementById(‘sixButton’).onclick = highlightFourth;
-    document.getElementById(‘sevenButton’).onclick = findAttribute;
-    document.getElementById(‘eightButton’).onclick = findPThird;
-  };
+  <!-- window.onload = function() {
+    document.getElementById('oneButton').onclick = addEmailIcon;
+    document.getElementById('twoButton').onclick = makeTablePretty;
+    document.getElementById('threeButton').onclick = fixTableTitle;
+    document.getElementById('fourButton').onclick = messUpP;
+    document.getElementById('fiveButton').onclick = messAllPInDiv;
+    document.getElementById('sixButton').onclick = highlightFourth;
+    document.getElementById('sevenButton').onclick = findAttribute;
+    document.getElementById('eightButton').onclick = findPThird;
+  }; -->
 
-  // This code will search all table’s that exist and change those row’s to the class tableAlt. If I wanted to change the odd numbered rows I would type instead $(‘tr:nth-child(odd)’)
+  // This code will search all table's that exist and change those row's to the class tableAlt. If I wanted to change the odd numbered rows I would type instead $('tr:nth-child(odd)')
 
   function fixTableTitle()
   {
@@ -126,70 +150,60 @@ Here I open up my html page and then link to the JQuery library.
 
 
 
-  // Here I assign onclick event handler’s, as soon as the web page loads, to all of the button’s below and state which function should be called when that event is triggered.
+  // Here I assign onclick event handler's, as soon as the web page loads, to all of the button's below and state which function should be called when that event is triggered.
   //
-  // For example, if someone clicks the button with the id name oneButton below, it’s onclick event handler will be triggered and the function addEmailIcon will be called. The html code for the button I referenced looks like this:
+  // For example, if someone clicks the button with the id name oneButton below, it's onclick event handler will be triggered and the function addEmailIcon will be called. The html code for the button I referenced looks like this:
 
   <button type="button" id="oneButton">Add Email Icon</button>
 
   function addEmailIcon() {
-    $(‘a[href^=mailto:]‘).addClass(‘email’);
+    $('a[href^=mailto:]').addClass('email');
   }
 
-  // Here I’m looking for any link’s that exist that have a value that begin’s with "mailto:". When I find one I change it’s class to the email class that will place an email icon in the background. The email class looks like this:
+  // Here I'm looking for any link's that exist that have a value that begin's with "mailto:". When I find one I change it's class to the email class that will place an email icon in the background. The email class looks like this:
 
   a.email {
     background: url(http://www.newthinktank.com/images/email-icon.gif) no-repeat right top;
     padding-right: 20px;
   }
 
-  function makeTablePretty()
-  {
-    $(‘tr:nth-child(even)’).addClass(‘tableAlt’);
-  }
-
-  // Here I’m choosing to change the class of every 1st row, in every table on the web page. There are numerous ways to change children elements inside of any parent element, as you can see.
+  // Here I'm choosing to change the class of every 1st row, in every table on the web page. There are numerous ways to change children elements inside of any parent element, as you can see.
 
   function messUpP()
   {
-    $(‘p’).eq(3).toggleClass("styleSample");
   }
 
-  // Here I tell the browser to find the 3rd paragraph on the web page and change it’s class.
+  // Here I tell the browser to find the 3rd paragraph on the web page and change it's class.
 
   function messAllPInDiv()
   {
-    $("div > p").toggleClass("styleSample");
   }
 
   // This code changes the class for every paragraph element that lies in a div element, on the web page.
 
   function highlightFourth()
   {
-    $(‘p:contains("Fourth")’).css("color", "yellow");
+    $('p:contains("Fourth")').css("color", "yellow");
   }
 
   // Here we look for the text "Fourth" inside of every paragraph element. If we find that word, I change the attribute of that element so that the text color equals "yellow".
 
   function findAttribute()
   {
-    $(‘p[align]‘).css("font-style", "italic");
+    $('p[align]').css("font-style", "italic");
   }
 
-  // Here I’m searching for element’s that have the attribute align assigned some value. If I find one I then assign the change listed.
+  // Here I'm searching for element's that have the attribute align assigned some value. If I find one I then assign the change listed.
 
-  // I could also search for element’s that have an attribute assigned with a specific value. If I was looking for a paragraph element with the attribute align assigned the value of left I would do the following:
+  // I could also search for element's that have an attribute assigned with a specific value. If I was looking for a paragraph element with the attribute align assigned the value of left I would do the following:
 
-  $(‘p[align="left"]‘)
+  $('p[align="left"]')
 
   function findPThird()
   {
-    if($(‘#third’).is(‘p’)){
-      alert("I found the paragraph named third");
-    }
   }
 
-  // I’m looking here for an element that has the id name of ‘third’. If I find it I then check if that element is a paragraph element. If both check out, I pop up an alert box that states that fact.
+  // I'm looking here for an element that has the id name of 'third'. If I find it I then check if that element is a paragraph element. If both check out, I pop up an alert box that states that fact.
 
 
 </body>
