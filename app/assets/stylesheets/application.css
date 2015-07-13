@@ -46,8 +46,9 @@
  background-color: #F5F5DC;
  }
 
- .tableTitle {
+ #tableTitle {
  background-color: #3D2B1F;
- color: #FFF;
+ /*color: #FFF;*/
+ color: blue;
  font-weight: bold;
  }
